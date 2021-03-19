@@ -43,3 +43,56 @@ def make_coffee(drink_name, drink_ordered):
     for item in drink_ordered:
         resources[item] -= drink_ordered[item]
     print(f"Here is your {drink_name} Enjoy!")
+
+
+while not off_button:
+    ask_customer = input(
+        "What would you like?  (espresso/latte/cappuccino):").lower()
+
+    if ask_customer == "off":
+        off_button = True
+        print("Coffee machione turning off.....")
+    elif ask_customer == "report":
+        print(f"Water: {resources['water']}ml")
+        print(f"Milk: {resources['milk']}ml")
+        print(f"Coffee: {resources['coffee']}gr")
+        print(f"Money: ${round(balance, 2)}")
+    elif ask_customer == "espresso" or ask_customer == "latte" or ask_customer == "cappuccino":
+
+        drink = MENU[ask_customer]
+        total_inserted = calc_money()
+
+        if order_coffee(drink["ingredients"]):
+            if calc_money_inserted(total_inserted, drink["cost"]):
+                make_coffee(ask_customer, drink["ingredients"])
+                print(
+                    f"Here is the total balance in account {round(balance, 2)}")
+
+    else:
+        print("Sorry, please type in correct name of the drink. Thank you!")
+
+while not off_button:
+    ask_customer = input(
+        "What would you like?  (espresso/latte/cappuccino):").lower()
+
+    if ask_customer == "off":
+        off_button = True
+        print("Coffee machione turning off.....")
+    elif ask_customer == "report":
+        print(f"Water: {resources['water']}ml")
+        print(f"Milk: {resources['milk']}ml")
+        print(f"Coffee: {resources['coffee']}gr")
+        print(f"Money: ${round(balance, 2)}")
+    elif ask_customer == "espresso" or ask_customer == "latte" or ask_customer == "cappuccino":
+
+        drink = MENU[ask_customer]
+        total_inserted = calc_money()
+
+        if order_coffee(drink["ingredients"]):
+            if calc_money_inserted(total_inserted, drink["cost"]):
+                make_coffee(ask_customer, drink["ingredients"])
+                print(
+                    f"Here is the total balance in account {round(balance, 2)}")
+
+    else:
+        print("Sorry, please type in correct name of the drink. Thank you!")
