@@ -26,3 +26,14 @@ def calc_money_inserted(money_inserted, cost):
     else:
         print("Sorry that's not enough money. Money refunded.")
         return False
+
+
+def calc_money():
+    """ Returns total coins inserted """
+    print("Please insert coins.")
+    quarters = int(input("how many quarters?:  ")) * 0.25
+    dimes = int(input("how many dimes?:  ")) * 0.1
+    nickles = int(input("how many nickles?:  ")) * 0.05
+    pennies = int(input("how many pennies?:  ")) * 0.01
+    total_coins_inserted = quarters + dimes + nickles + pennies
+    return total_coins_inserted
