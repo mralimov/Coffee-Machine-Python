@@ -37,3 +37,9 @@ def calc_money():
     pennies = int(input("how many pennies?:  ")) * 0.01
     total_coins_inserted = quarters + dimes + nickles + pennies
     return total_coins_inserted
+
+
+def make_coffee(drink_name, drink_ordered):
+    for item in drink_ordered:
+        resources[item] -= drink_ordered[item]
+    print(f"Here is your {drink_name} Enjoy!")
